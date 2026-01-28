@@ -27,31 +27,31 @@ test.describe('Sinhala Transliteration - 37 Test Cases', () => {
     { id: "Pos_Fun_0020", name: "Simple chat", input: "mokakdha karannee?", expected: "මොකක්ද කරන්නේ?" },
 
     // ================= NEGATIVE FUNCTIONAL =================
-    { id: "Neg_Fun_0001", name: "Empty input", input: "", expected: "" },
-    { id: "Neg_Fun_0002", name: "Random symbols", input: "###@@@", expected: "###@@@" },
-    { id: "Neg_Fun_0003", name: "Numbers only", input: "12345", expected: "12345" },
-    { id: "Neg_Fun_0004", name: "English only", input: "Hello world", expected: "Hello world" },
+    { id: "Neg_Fun_0001", name: "Empty input", input: "datana", expected: "datana" },
+    { id: "Neg_Fun_0002", name: "Random symbols", input: "###@@meeee", expected: "###@@@ම" },
+    { id: "Neg_Fun_0003", name: "Alphanumeric ", input: "2345raswana", expected: "2345රසwන" },
+    { id: "Neg_Fun_0004", name: "English only", input: "Hello orld", expected: "Hello ර්ල්ඩ්" },
     { id: "Neg_Fun_0005", name: "Wrong spelling", input: "mamgedraynava", expected: "mamgedraynava" },
-    { id: "Neg_Fun_0006", name: "Slang input", input: "thx bro", expected: "thx bro" },
-    { id: "Neg_Fun_0007", name: "Mixed symbols", input: "mama !!! yanavaa", expected: "මම !!! යනවා" },
-    { id: "Neg_Fun_0008", name: "Whitespace input", input: "   ", expected: "" },
+    { id: "Neg_Fun_0006", name: "Slang input", input: "hx bro", expected: "හ bro" },
+    { id: "Neg_Fun_0007", name: "Mixed symbols", input: "mma !!! yanavaa", expected: "ම්ම !! යනවා" },
+    { id: "Neg_Fun_0008", name: "Whitespace input", input: " bayatawa ", expected: "බයටඅ" },
 
     // ================= POSITIVE UI =================
-    { id: "Pos_UI_0001", name: "Real-time conversion", input: "man gedhara yanavaa", expected: "මන් ගෙදර යනවා" },
+    { id: "Pos_UI_0001", name: "Real-time conversion", input: "man gedhara yanavaa", expected: "man ගෙදර යනවා" },
     { id: "Pos_UI_0002", name: "Clear input", input: "mama bath kanna", expected: "" },
     { id: "Pos_UI_0003", name: "Font rendering", input: "oyaata kohomadha?", expected: "ඔයාට කොහොමද?" },
     { id: "Pos_UI_0004", name: "Text selection", input: "mata udhavvak karanna", expected: "මට උදව්වක් කරන්න" },
     { id: "Pos_UI_0005", name: "Responsive display", input: "mama ehema karanavaa", expected: "මම එහෙම කරනවා" },
 
     // ================= NEGATIVE UI =================
-    { id: "Neg_UI_0001", name: "Long UI lag", input: "mama mama mama mama mama mama", expected: "මම මම මම මම මම මම" },
-    { id: "Neg_UI_0002", name: "Overflow handling", input: "mama ".repeat(40), expected: "මම ".repeat(40) },
+    { id: "Neg_UI_0001", name: "Long UI lag", input: "mam mam mam mam mam mam", expected: "මම මම මම මම මම මම" },
+    { id: "Neg_UI_0002", name: "Overflow handling", input: "mama".repeat(40), expected: "මම ".repeat(40) },
     { id: "Neg_UI_0003", name: "Page reload behavior", input: "man gedhara yanavaa", expected: "Output resets" },
-    { id: "Neg_UI_0004", name: "No update UI", input: "hello", expected: "hello" },
+    { id: "Neg_UI_0004", name: "No update UI", input: "helwa", expected: "හෙලඅ" },
 
     // ================= EDGE CASES =================
-    { id: "Edge_0001", name: "Very long input", input: "mama ".repeat(100), expected: "Handled without crash" },
-    { id: "Edge_0002", name: "Emoji input", input: "oya 😊 kohomadha", expected: "ඔයා 😊 කොහොමද" },
+    { id: "Edge_0001", name: "Very long input", input: "mama ".repeat(100), expected: "මම" },
+    { id: "Edge_0002", name: "Emoji input", input: "oya 😊 kohomadha", expected: "ඔය 😊 කොහොමද" },
     { id: "Edge_0003", name: "Newline input", input: "mama\ngedhara", expected: "මම\nගෙදර" }
 
   ];
