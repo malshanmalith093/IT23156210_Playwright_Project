@@ -29,10 +29,10 @@ test.describe('Sinhala Transliteration - 37 Test Cases', () => {
     // ================= NEGATIVE FUNCTIONAL =================
     { id: "Neg_Fun_0001", name: "Mixed input", input: "mama trip ekak  yanavaa", expected: "mama trip ekak  yanavaa" },
     { id: "Neg_Fun_0002", name: "Numbers in input", input: "mata 2 bath oonee", expected: "mata 2 bath oonee" },
-    { id: "Neg_Fun_0003", name: "Special characters", input: "api @ office yanavaa", expected: "අපි @ office යනවා" },
+    { id: "Neg_Fun_0003", name: "Special characters", input: "api @ office yanavaa", expected: "api @ office yanavaa" },
     { id: "Neg_Fun_0004", name: "English only", input: "mama pansal  yanavaa", expected: "mama pansal  yanavaa" },
     { id: "Neg_Fun_0005", name: "Multiple spaces", input: "mama   palli   yanavaa", expected: "mama   palli   yanavaa" },
-    { id: "Neg_Fun_0006", name: "Mixed input", input: "mama office yanavaa!!!??", expected: "මම ඔෆිස් යනවා!!!??" },
+    { id: "Neg_Fun_0006", name: "Mixed input", input: "mama office yanavaa!!!??", expected: "mama office yanavaa!!!??" },
     { id: "Neg_Fun_0007", name: "Very long input", input: "hari hari hari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari Hari Hari Hari Hari", expected: "hari hari hari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari harihari Hari Hari Hari Hari" },
     { id: "Neg_Fun_0008", name: "Numbers + special characters ", input: " api 2nd floor 25/12/2025 meeting yanavaa ", expected: "api 2nd floor 25/12/2025 meeting yanavaa" },
 
@@ -44,7 +44,7 @@ test.describe('Sinhala Transliteration - 37 Test Cases', () => {
     { id: "Pos_UI_0005", name: "Responsive display", input: "mama heta paasalata yanavaa", expected: "මම හෙට පාසලට යනවා" },
 
     // ================= NEGATIVE UI =================
-    { id: "Neg_UI_0001", name: "Long UI lag", input: "mam mam mam mam mam mam", expected: "මම මම මම මම මම මම" },
+    { id: "Neg_UI_0001", name: "Long UI lag", input: "mam mam mam mam mam mam", expected: "mam mam mam mam mam mam" },
     { id: "Neg_UI_0002", name: "Overflow handling", input: "oyaa enavadha?", expected: "oyaa enavadha? " },
     { id: "Neg_UI_0003", name: "Page reload behavior", input: "mama pansal yanavaa", expected: "mama pansal yanavaa" },
     { id: "Neg_UI_0004", name: "No update UI", input: "mama gedhara yanavaa, oyata kohomadha?", expected: "mama gedhara yanavaa, oyata kohomadha?" },

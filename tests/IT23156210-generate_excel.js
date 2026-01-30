@@ -45,7 +45,7 @@ const testCases = [
     "Actual output": "මම පන්සල් යනවා",
     "Status": "Pass",
     "Accuracy justification / Description": "Compound sentence meaning preserved.",
-    "What is covered by the test": "Word combination / phrase pattern; Compound sentence; M (31–299 characters); Accuracy validation"
+    "What is covered by the test": "Compound sentence; S (≤30 characters); Accuracy validation"
   },
   {
     "TC ID": "Pos_Fun_0005",
@@ -375,8 +375,8 @@ const testCases = [
     "Test case name": "UI lag with long input",
     "Input length type": "L",
     "Input": "mama ".repeat(100),
-    "Expected output": "Sinhala output updates without lag",
-    "Actual output": "Lag observed",
+    "Expected output": "mama ".repeat(100),
+    "Actual output": "මම ".repeat(100),
     "Status": "Fail",
     "Accuracy justification / Description": "Long input causes UI lag.",
     "What is covered by the test": "Usability flow; L (≥300 characters); Real-time output update behavior"
@@ -393,23 +393,23 @@ const testCases = [
   },{
     "TC ID": "Neg_UI_0003",
     "Test case name": "Incorrect Sinhala output",
-    "Input length type": "S",
-    "Input": "mama pansal yanavaa ",
-    "Expected output": "mama pansal yanavaa",
-    "Actual output": "මම පන්සල් යනවා",
+    "Input length type": "M",
+    "Input": " mama pansal yannee naee ",
+    "Expected output": "mama pansal yannee naee",
+    "Actual output": "මම පන්සල් යන්නේ නෑ",
     "Status": "Fail",
     "Accuracy justification / Description": "Incorrect Sinhala output generated.",
-    "What is covered by the test": "Daily language usage; Sentence structure; S (≤30 characters); Real-time output update behavior"
+    "What is covered by the test": "Daily language usage; Sentence structure; M (≥30 characters); Real-time output update behavior"
   },{
     "TC ID": "Neg_UI_0004",
     "Test case name": "No Sinhala output update",
-    "Input length type": "S",
-    "Input": " mama gedhara yanavaa, oyata kohomadha? ",
-    "Expected output": " mama gedhara yanavaa, oyata kohomadha?",
-    "Actual output": "මම ගෙදර යනවා, ඔයාට කොහොමද?",
+    "Input length type": "M",
+    "Input": "mama gedhara yannee naee , oyaata kohomadha? ",
+    "Expected output": "mama gedhara yannee naee , oyaata kohomadha?",
+    "Actual output": "මම ගෙදර යන්නේ නෑ , ඔයාට කොහොමද?",
     "Status": "Fail",
     "Accuracy justification / Description": "No update in Sinhala output despite input change.",
-    "What is covered by the test": "Usability flow; S (≤30 characters); Real-time output update behavior"
+    "What is covered by the test": "Usability flow; M (≥30 characters); Real-time output update behavior"
   },
 
   
