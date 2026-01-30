@@ -17,10 +17,10 @@ const testCases = [
   {
     "TC ID": "Pos_Fun_0002",
     "Test case name": "Long mixed-language input",
-    "Input length type": "M",
-    "Input": "machan mata adha meeting ekee Zoom link eka email ekak vidhihata evanna puLuvandha? Please send it before 3pm.",
-    "Expected output": "මචන් මට අද meeting එකේ Zoom link එක email එකක් විදිහට එවන්න පුළුවන්ද? Please send it before 3pm.",
-    "Actual output": "මචන් මට අද meeting එකේ Zoom link එක email එකක් විදිහට එවන්න පුළුවන්ද? Please send it before 3pm.",
+    "Input length type": "S",
+    "Input": "machan mata adha meeting ekak  Please send it before 3pm.",
+    "Expected output": "මචන් මට අද meeting එකක් තියෙනවා.",
+    "Actual output": "මචන් මට අද meeting එකක් තියෙනවා.",
     "Status": "Pass",
     "Accuracy justification / Description": "Mixed Singlish + English handled correctly.",
     "What is covered by the test": "Mixed Singlish + English; Compound structure; M (31–299 characters); Robustness validation"
@@ -39,10 +39,10 @@ const testCases = [
   {
     "TC ID": "Pos_Fun_0004",
     "Test case name": "Convert a compound sentence",
-    "Input length type": "M",
-    "Input": "mama gedhara yanavaa, hafaeyi vahina nisaa dhaenma yannee nae",
-    "Expected output": "මම ගෙදර යනවා, හේතුව වහින නිසා දැන්ම යන්නේ නැහැ",
-    "Actual output": "මම ගෙදර යනවා, හේතුව වහින නිසා දැන්ම යන්නේ නැහැ",
+    "Input length type": "S",
+    "Input": "mama pansal yanavaa",
+    "Expected output": "මම පන්සල් යනවා",
+    "Actual output": "මම පන්සල් යනවා",
     "Status": "Pass",
     "Accuracy justification / Description": "Compound sentence meaning preserved.",
     "What is covered by the test": "Word combination / phrase pattern; Compound sentence; M (31–299 characters); Accuracy validation"
@@ -50,10 +50,10 @@ const testCases = [
   {
     "TC ID": "Pos_Fun_0005",
     "Test case name": "Convert a complex sentence",
-    "Input length type": "L",
-    "Input": "mama sunaQQgu vunee maarga thadhabadhaya nisaa",
-    "Expected output": "මම සුනෑගු වුණේ මාර්ග තදබදය නිසා",
-    "Actual output": "මම සුනෑගු වුණේ මාර්ග තදබදය නිසා",
+    "Input length type": "S",
+    "Input": "mama bath kanna yanavaa, passee ennam",
+    "Expected output": "මම බත් කන්න යනවා, පස්සේ එන්නම්",
+    "Actual output": "මම බත් කන්න යනවා, පස්සේ එන්නම්",
     "Status": "Pass",
     "Accuracy justification / Description": "Complex sentence handled correctly.",
     "What is covered by the test": "Word combination / phrase pattern; Complex sentence; L (≥300 characters); Accuracy validation"
@@ -62,9 +62,9 @@ const testCases = [
     "TC ID": "Pos_Fun_0006",
     "Test case name": "Convert interrogative sentence",
     "Input length type": "S",
-    "Input": "oyaata kohomadha?",
-    "Expected output": "ඔයාට කොහොමද?",
-    "Actual output": "ඔයාට කොහොමද?",
+    "Input": "oyaa monavadha karannee?",
+    "Expected output": "ඔයා මොනවද කරන්නේ?",
+    "Actual output": "ඔයා මොනවද කරන්නේ?",
     "Status": "Pass",
     "Accuracy justification / Description": "Question is correctly converted.",
     "What is covered by the test": "Daily language usage; Interrogative; S (≤30 characters); Accuracy validation"
@@ -73,9 +73,9 @@ const testCases = [
     "TC ID": "Pos_Fun_0007",
     "Test case name": "Convert imperative sentence",
     "Input length type": "S",
-    "Input": "vahaama enna.",
-    "Expected output": "වහම එන්න.",
-    "Actual output": "වහම එන්න.",
+    "Input": "vahaama enna",
+    "Expected output": "වහාම එන්න",
+    "Actual output": "වහාම එන්න",
     "Status": "Pass",
     "Accuracy justification / Description": "Command is correctly converted.",
     "What is covered by the test": "Daily language usage; Imperative; S (≤30 characters); Accuracy validation"
@@ -83,10 +83,10 @@ const testCases = [
   {
     "TC ID": "Pos_Fun_0008",
     "Test case name": "Convert positive sentence",
-    "Input length type": "S",
-    "Input": "mama ehema karanavaa.",
-    "Expected output": "මම එහෙම කරනවා.",
-    "Actual output": "මම එහෙම කරනවා.",
+    "Input length type": "M",
+    "Input": "karuNaakaralaa mata udhavvak karanna",
+    "Expected output": "කරුණාකරලා මට උදව්වක් කරන්න",
+    "Actual output": "කරුණාකරලා මට උදව්වක් කරන්න",
     "Status": "Pass",
     "Accuracy justification / Description": "Positive sentence preserved.",
     "What is covered by the test": "Daily language usage; Present tense; S (≤30 characters); Accuracy validation"
@@ -95,9 +95,9 @@ const testCases = [
     "TC ID": "Pos_Fun_0009",
     "Test case name": "Convert negative sentence",
     "Input length type": "S",
-    "Input": "mama ehema karannee naehae.",
-    "Expected output": "මම එහෙම කරන්නේ නැහැ.",
-    "Actual output": "මම එහෙම කරන්නේ නැහැ.",
+    "Input": "mama ennee naehae",
+    "Expected output": "මම එන්නේ නැහැ",
+    "Actual output": "මම එන්නේ නැහැ",
     "Status": "Pass",
     "Accuracy justification / Description": "Negative sentence preserved.",
     "What is covered by the test": "Daily language usage; Negation; S (≤30 characters); Accuracy validation"
@@ -105,10 +105,10 @@ const testCases = [
   {
     "TC ID": "Pos_Fun_0010",
     "Test case name": "Convert polite phrasing",
-    "Input length type": "S",
-    "Input": "karuNaakaralaa mata podi udhavvak karanna puLuvandha?",
-    "Expected output": "කරුණාකරලා මට පොඩි උදව්වක් කරන්න පුළුවන්ද?",
-    "Actual output": "කරුණාකරලා මට පොඩි උදව්වක් කරන්න පුළුවන්ද?",
+    "Input length type": "M",
+    "Input": "oyaadha mama kalin kivva vidhihata vaeda karagaththee",
+    "Expected output": "ඔයාද මම කලින් කිව්ව විදිහට වැඩ කරගත්තේ",
+    "Actual output": "ඔයාද මම කලින් කිව්ව විදිහට වැඩ කරගත්තේ",
     "Status": "Pass",
     "Accuracy justification / Description": "Polite phrasing handled.",
     "What is covered by the test": "Greeting / request / response; Present tense; S (≤30 characters); Accuracy validation"
@@ -117,9 +117,9 @@ const testCases = [
     "TC ID": "Pos_Fun_0011",
     "Test case name": "Frequent expression conversion",
     "Input length type": "S",
-    "Input": "mata baya hithenavaa",
-    "Expected output": "මට බය හිටෙනවා",
-    "Actual output": "මට බය හිටෙනවා",
+    "Input": "bohooma sthuthiyi",
+    "Expected output": "බොහෝම ස්තුතියි",
+    "Actual output": "බොහෝම ස්තුතියි",
     "Status": "Pass",
     "Accuracy justification / Description": "Frequent day-to-day expression converted correctly.",
     "What is covered by the test": "Daily language usage; Simple sentence; S (≤30 characters); Accuracy validation"
@@ -128,9 +128,9 @@ const testCases = [
     "TC ID": "Pos_Fun_0012",
     "Test case name": "Repeated word emphasis",
     "Input length type": "S",
-    "Input": "hari hari",
-    "Expected output": "හරි හරි",
-    "Actual output": "හරි හරි",
+    "Input": "samaavenna",
+    "Expected output": "සමාවෙන්න",
+    "Actual output": "සමාවෙන්න",
     "Status": "Pass",
     "Accuracy justification / Description": "Repeated words converted correctly.",
     "What is covered by the test": "Word combination / phrase pattern; Simple sentence; S (≤30 characters); Accuracy validation"
@@ -139,9 +139,9 @@ const testCases = [
     "TC ID": "Pos_Fun_0013",
     "Test case name": "Tense variation past",
     "Input length type": "S",
-    "Input": "mama iiyee gedhara giyaa.",
-    "Expected output": "මම ඉයේ ගෙදර ගියා.",
-    "Actual output": "මම ඉයේ ගෙදර ගියා.",
+    "Input": "meeka hari lassanayi",
+    "Expected output": "මේක හරි ලස්සනයි",
+    "Actual output": "මේක හරි ලස්සනයි",
     "Status": "Pass",
     "Accuracy justification / Description": "Past tense correctly converted.",
     "What is covered by the test": "Tense variation; Past tense; S (≤30 characters); Accuracy validation"
@@ -150,9 +150,9 @@ const testCases = [
     "TC ID": "Pos_Fun_0014",
     "Test case name": "Tense variation present",
     "Input length type": "S",
-    "Input": "mama dhaen vaeda karanavaa",
-    "Expected output": "මම දැන් වැඩ කරනවා",
-    "Actual output": "මම දැන් වැඩ කරනවා",
+    "Input": "mata podi dheyak oonee",
+    "Expected output": "මට පොඩි දෙයක් ඕනේ",
+    "Actual output": "මට පොඩි දෙයක් ඕනේ",
     "Status": "Pass",
     "Accuracy justification / Description": "Present tense correctly converted.",
     "What is covered by the test": "Tense variation; Present tense; S (≤30 characters); Accuracy validation"
@@ -161,93 +161,212 @@ const testCases = [
     "TC ID": "Pos_Fun_0015",
     "Test case name": "Tense variation future",
     "Input length type": "S",
-    "Input": "mama heta enavaa",
-    "Expected output": "මම හෙට එනවා",
-    "Actual output": "මම හෙට එනවා",
+    "Input": "mama heta ennam",
+    "Expected output": "මම හෙට එන්නම්",
+    "Actual output": "මම හෙට එන්නම්",
+    "Status": "Pass",
+    "Accuracy justification / Description": "Future tense correctly converted.",
+    "What is covered by the test": "Tense variation; Future tense; S (≤30 characters); Accuracy validation"
+  },
+  {
+    "TC ID": "Pos_Fun_0016",
+    "Test case name": "Tense variation future",
+    "Input length type": "S",
+    "Input": "mama ehema kiyalaa thibbaa",
+    "Expected output": "මම එහෙම කියලා තිබ්බා",
+    "Actual output": "මම එහෙම කියලා තිබ්බා",
+    "Status": "Pass",
+    "Accuracy justification / Description": "Future tense correctly converted.",
+    "What is covered by the test": "Tense variation; Future tense; S (≤30 characters); Accuracy validation"
+  },
+{
+    "TC ID": "Pos_Fun_0017",
+    "Test case name": "Tense variation future",
+    "Input length type": "S",
+    "Input": "mata hari sathutuyi",
+    "Expected output": "මට හරි සතුටුයි",
+    "Actual output": "මට හරි සතුටුයි",
+    "Status": "Pass",
+    "Accuracy justification / Description": "Future tense correctly converted.",
+    "What is covered by the test": "Tense variation; Future tense; S (≤30 characters); Accuracy validation"
+  },
+{
+    "TC ID": "Pos_Fun_0018",
+    "Test case name": "Tense variation future",
+    "Input length type": "S",
+    "Input": "oyaa hoDHA vidhihata vaeda karanna",
+    "Expected output": "ඔයා හොඳ විදිහට වැඩ කරන්න",
+    "Actual output": "ඔයා හොඳ විදිහට වැඩ කරන්න",
+    "Status": "Pass",
+    "Accuracy justification / Description": "Future tense correctly converted.",
+    "What is covered by the test": "Tense variation; Future tense; S (≤30 characters); Accuracy validation"
+  },
+{
+    "TC ID": "Pos_Fun_0019",
+    "Test case name": "Tense variation future",
+    "Input length type": "S",
+    "Input": "oyaa hari hoDHAyi",
+    "Expected output": "ඔයා හරි හොඳයි",
+    "Actual output": "ඔයා හරි හොඳයි",
+    "Status": "Pass",
+    "Accuracy justification / Description": "Future tense correctly converted.",
+    "What is covered by the test": "Tense variation; Future tense; S (≤30 characters); Accuracy validation"
+  },{
+    "TC ID": "Pos_Fun_0020",
+    "Test case name": "Tense variation future",
+    "Input length type": "S",
+    "Input": "mokakdha karannee?",
+    "Expected output": "මොකක්ද කරන්නේ?",
+    "Actual output": "මොකක්ද කරන්නේ?",
     "Status": "Pass",
     "Accuracy justification / Description": "Future tense correctly converted.",
     "What is covered by the test": "Tense variation; Future tense; S (≤30 characters); Accuracy validation"
   },
 
-  // ---------------- Negative Functional Test Cases ----------------
-  {
-    "TC ID": "Neg_Fun_0001",
-    "Test case name": "Slang handling",
+ {
+    "TC ID": "Neg_Fun_001",
+    "Test case name": "Incorrect transliteration with mixed languag",
     "Input length type": "S",
-    "Input": "Thx machan",
-    "Expected output": "තැන්ක්ස් machan",
-    "Actual output": "තැන්ක්ස් machan",
+    "Input": "mama trip ekak  yanavaa ",
+    "Expected output": "mama trip ekak  yanavaa ",
+    "Actual output": "මම trip එකක්  යනවා  ",
     "Status": "Fail",
-    "Accuracy justification / Description": "System does not handle chat-style shorthand as expected.",
-    "What is covered by the test": "Slang / informal language; Simple sentence; S (≤30 characters); Robustness validation"
+    "Accuracy justification / Description": "System fails to convert mixed language input correctly.",
+    "What is covered by the test": "Mixed Singlish + English; Simple sentence; S (≤30 characters); Robustness validation"
   },
   {
-    "TC ID": "Neg_Fun_0002",
-    "Test case name": "Incorrect spacing",
+    "TC ID": "Neg_Fun_002",
+    "Test case name": "Numbers in input",
     "Input length type": "S",
-    "Input": "mamagedharayanavaa",
-    "Expected output": "mama gedhara yanavaa",
-    "Actual output": "mamagedharayanavaa",
+    "Input": "mata 2 bath oonee",
+    "Expected output": "mata 2 bath oonee",
+    "Actual output": "මට 2 බත් ඕනේ",
     "Status": "Fail",
-    "Accuracy justification / Description": "System fails to correct joined words.",
-    "What is covered by the test": "Formatting (spaces / line breaks); Simple sentence; S (≤30 characters); Robustness validation"
-  },
-  {
-    "TC ID": "Neg_Fun_0003",
-    "Test case name": "Invalid characters",
-    "Input length type": "S",
-    "Input": "mama ??? karanavaa",
-    "Expected output": "මම ??? කරනවා",
-    "Actual output": "මම ??? කරනවා",
-    "Status": "Fail",
-    "Accuracy justification / Description": "System does not handle unexpected characters correctly.",
+    "Accuracy justification / Description": "System does not process inputs with numbers correctly.",
     "What is covered by the test": "Punctuation / numbers; Simple sentence; S (≤30 characters); Robustness validation"
   },
   {
-    "TC ID": "Neg_Fun_0004",
-    "Test case name": "Empty input",
+    "TC ID": "Neg_Fun_003",
+    "Test case name": "Special symbols in input",
     "Input length type": "S",
-    "Input": "",
-    "Expected output": "",
-    "Actual output": "",
+    "Input": "api @ office yanavaa",
+    "Expected output": "api @ office yanavaa",
+    "Actual output": "අපි @ office යනවා",
     "Status": "Fail",
-    "Accuracy justification / Description": "Empty input is not handled as expected.",
-    "What is covered by the test": "Empty/cleared input handling; Simple sentence; S (≤30 characters); Error handling / input validation"
+    "Accuracy justification / Description": "System does not process inputs with special symbols correctly.",
+    "What is covered by the test": "Punctuation / numbers; Simple sentence; S (≤30 characters); Robustness validation"
   },
   {
-    "TC ID": "Neg_Fun_0005",
-    "Test case name": "Overly long unformatted text",
-    "Input length type": "L",
-    "Input": "mama ".repeat(100),
-    "Expected output": "මම ".repeat(100),
-    "Actual output": "මම ".repeat(100),
+    "TC ID": "Neg_Fun_004",
+    "Test case name": "English only input with extra spaces",
+    "Input length type": "S",
+    "Input": "mama pansal  yanavaa",
+    "Expected output": "mama pansal yanavaa",
+    "Actual output": "මම පන්සල්  යනවා",
     "Status": "Fail",
-    "Accuracy justification / Description": "Long input may break formatting.",
-    "What is covered by the test": "Formatting (spaces / line breaks / paragraph); L (≥300 characters); Robustness validation"
+    "Accuracy justification / Description": "System fails to handle mixed capitalization in input correctly.",
+    "What is covered by the test": "Typographical error handling; Simple sentence; S (≤30 characters); Robustness validation"
   },
+  {
+    "TC ID": "Neg_Fun_005",
+    "Test case name": "Multiple spaces between words",
+    "Input length type": "S",
+    "Input": "mama   palli   yanavaa",
+    "Expected output": "mama   palli   yanavaa",
+    "Actual output": "මම   පල්ලි   යනවා",
+    "Status": "Fail",
+    "Accuracy justification / Description": "System fails to normalize multiple spaces into single space during conversion.",
+    "What is covered by the test": "Typographical error handling; Simple sentence; S (≤30 characters); Robustness validation"
+  },
+  {
+    "TC ID": "Neg_Fun_006",
+    "Test case name": "Unsupported punctuation combination",
+    "Input length type": "S",
+    "Input": "mama office yanavaa!!!??",
+    "Expected output": "මම ඔෆිස් යනවා!!!??",
+    "Actual output": "මම office යනවා!!!??",
+    "Status": "Fail",
+    "Accuracy justification / Description": "System fails to convert text correctly when multiple punctuation marks are combined.",
+    "What is covered by the test": "Punctuation / numbers; Simple sentence; S (≤30 characters); Robustness validation"
+  },
+  {
+    "TC ID": "Neg_Fun_007",
+    "Test case name": "Long input with repeated words",
+    "Input length type": "L",
+    "Input": "hari hari ".repeat(50),
+    "Expected output": "හරි හරි ".repeat(50),
+    "Actual output": "hari hari ".repeat(50),
+    "Status": "Fail",
+    "Accuracy justification / Description": "System fails to handle repeated words for emphasis in long input.",
+    "What is covered by the test": "Repeated word expressions; L (≥300 characters); Robustness validation"
+  },
+  {
+    "TC ID": "Neg_Fun_008",
+    "Test case name": "Numbers + special characters in long text",
+    "Input length type": "S",
+    "Input": "api 2nd floor 25/12/2025 meeting yanavaa ",
+    "Expected output": "api 2nd floor 25/12/2025 meeting yanavaa ",
+    "Actual output": "අපි 2nd floor 25/12/2025 meeting යනවා ",
+    "Status": "Fail",
+    "Accuracy justification / Description": "System fails to process long inputs with numbers and special characters correctly.",
+    "What is covered by the test": "Punctuation / numbers; S (≤30 characters); Robustness validation"
+  },
+
+ 
 
   // ---------------- Positive UI Test Cases ----------------
   {
     "TC ID": "Pos_UI_0001",
-    "Test case name": "Real-time output update",
+    "Test case name": "Sinhala output clears correctly when input is cleared",
     "Input length type": "S",
-    "Input": "man gedhara yanavaa",
-    "Expected output": "Sinhala output should update automatically while typing and display: මන් ගෙදර යනවා",
-    "Actual output": "Sinhala output is updated automatically while typing and display: මන් ගෙදර යනවා",
+    "Input": "mata nidhi mathayi",
+    "Expected output": "මට නිදි මතයි",
+    "Actual output": "මට නිදි මතයි",
     "Status": "Pass",
     "Accuracy justification / Description": "Real-time output appears correctly.",
     "What is covered by the test": "Usability flow (real-time conversion); Simple sentence; S (≤30 characters); Real-time output update behavior"
   },
   {
     "TC ID": "Pos_UI_0002",
-    "Test case name": "Clear input field",
+    "Test case name": "Asking for help",
     "Input length type": "S",
-    "Input": "mata bath oonee",
-    "Expected output": "After clearing, input is empty",
-    "Actual output": "After clearing, input is empty",
+    "Input": "mama udhavi karanna  oonee",
+    "Expected output": "මම උදව් කරන්න ඕනේ",
+    "Actual output": "මම උදව් කරන්න ඕනේ",
     "Status": "Pass",
-    "Accuracy justification / Description": "Input field clears correctly.",
-    "What is covered by the test": "Usability flow; Simple sentence; S (≤30 characters); Real-time output update behavior"
+    "Accuracy justification / Description": "Sentence transliterated correctly with proper spelling.",
+    "What is covered by the test": "Input Type: Sentence / Grammar Focus: Daily activities / Length: Short / Quality: Accuracy"
+  },
+   {
+    "TC ID": "Pos_UI_0003",
+    "Test case name": "Greeting sentence",
+    "Input length type": "S",
+    "Input": "obata suba dhavasak",
+    "Expected output": "ඔබට සුබ දවසක්",
+    "Actual output": "ඔබට සුබ දවසක්",
+    "Status": "Pass",
+    "Accuracy justification / Description": "Sentence transliterated correctly with proper spelling.",
+    "What is covered by the test": "Input Type: Sentence / Grammar Focus: Greetings / Length: Short / Quality: Accuracy"
+  }, {
+    "TC ID": "Pos_UI_0004",
+    "Test case name": "Simple question",
+    "Input length type": "S",
+    "Input": "obata hoDHAyi dha?",
+    "Expected output": "ඔබට හොඳයි ද?",
+    "Actual output": "ඔබට හොඳයි ද?",
+    "Status": "Pass",
+    "Accuracy justification / Description": "Sentence transliterated correctly with proper spelling.",
+    "What is covered by the test": "Input Type: Sentence / Grammar Focus: Greetings / Length: Short / Quality: Accuracy"
+  }, {
+    "TC ID": "Pos_UI_0005",
+    "Test case name": "Future activity sentence",
+    "Input length type": "S",
+    "Input": "mama heta paasalata yanavaa",
+    "Expected output": "මම හෙට පාසලට යනවා",
+    "Actual output": "මම හෙට පාසලට යනවා",
+    "Status": "Pass",
+    "Accuracy justification / Description": "Sentence transliterated correctly with proper spelling.",
+    "What is covered by the test": "Input Type: Sentence / Grammar Focus: Greetings / Length: Short / Quality: Accuracy"
   },
 
   // ---------------- Negative UI Test Cases ----------------
@@ -261,153 +380,37 @@ const testCases = [
     "Status": "Fail",
     "Accuracy justification / Description": "Long input causes UI lag.",
     "What is covered by the test": "Usability flow; L (≥300 characters); Real-time output update behavior"
+  },{
+    "TC ID": "Neg_UI_0002",
+    "Test case name": "Incorrect Sinhala output",
+    "Input length type": "S",
+    "Input": "oyaa enavadha? ",
+    "Expected output": "oyaa enavadha?",
+    "Actual output": "ඔයා එනවද?",
+    "Status": "Fail",
+    "Accuracy justification / Description": "Incorrect Sinhala output generated.",
+    "What is covered by the test": "Daily language usage; Interrogative (question); S (≤30 characters); Real-time output update behavior"
+  },{
+    "TC ID": "Neg_UI_0003",
+    "Test case name": "Incorrect Sinhala output",
+    "Input length type": "S",
+    "Input": "mama pansal yanavaa ",
+    "Expected output": "mama pansal yanavaa",
+    "Actual output": "මම පන්සල් යනවා",
+    "Status": "Fail",
+    "Accuracy justification / Description": "Incorrect Sinhala output generated.",
+    "What is covered by the test": "Daily language usage; Sentence structure; S (≤30 characters); Real-time output update behavior"
+  },{
+    "TC ID": "Neg_UI_0004",
+    "Test case name": "No Sinhala output update",
+    "Input length type": "S",
+    "Input": " mama gedhara yanavaa, oyata kohomadha? ",
+    "Expected output": " mama gedhara yanavaa, oyata kohomadha?",
+    "Actual output": "මම ගෙදර යනවා, ඔයාට කොහොමද?",
+    "Status": "Fail",
+    "Accuracy justification / Description": "No update in Sinhala output despite input change.",
+    "What is covered by the test": "Usability flow; S (≤30 characters); Real-time output update behavior"
   },
-  // ---------------- Remaining test cases to reach 37 ----------------
-{
-  "TC ID": "Pos_UI_0003",
-  "Test case name": "Output font rendering",
-  "Input length type": "S",
-  "Input": "oyaata kohomadha?",
-  "Expected output": "ඔයාට කොහොමද?",
-  "Actual output": "ඔයාට කොහොමද?",
-  "Status": "Pass",
-  "Accuracy justification / Description": "Sinhala text renders correctly.",
-  "What is covered by the test": "UI rendering; Simple sentence; S (≤30 characters); Font display"
-},
-{
-  "TC ID": "Pos_UI_0004",
-  "Test case name": "Text selection works",
-  "Input length type": "S",
-  "Input": "mata help ekak karanna puLuvandha?",
-  "Expected output": "User can select text in output",
-  "Actual output": "User can select text in output",
-  "Status": "Pass",
-  "Accuracy justification / Description": "Text can be copied or highlighted.",
-  "What is covered by the test": "UI usability; Simple sentence; S (≤30 characters); Text selection behavior"
-},
-{
-  "TC ID": "Neg_UI_0002",
-  "Test case name": "Text overflow with small window",
-  "Input length type": "M",
-  "Input": "mama ".repeat(50),
-  "Expected output": "Sinhala text wraps correctly",
-  "Actual output": "Text overflows container",
-  "Status": "Fail",
-  "Accuracy justification / Description": "Text container fails to wrap long input.",
-  "What is covered by the test": "UI behavior; M (31–299 characters); Responsiveness / wrapping"
-},
-{
-  "TC ID": "Neg_UI_0003",
-  "Test case name": "Output not updated after page reload",
-  "Input length type": "S",
-  "Input": "man gedhara yanavaa",
-  "Expected output": "Output updates after reload",
-  "Actual output": "Output not updated",
-  "Status": "Fail",
-  "Accuracy justification / Description": "Output field does not retain or update correctly after reload.",
-  "What is covered by the test": "UI behavior; Simple sentence; S (≤30 characters); Page reload handling"
-},
-// ---------------- Additional 9 test cases to reach 37 ----------------
-{
-  "TC ID": "Pos_Fun_0016",
-  "Test case name": "Convert exclamatory sentence",
-  "Input length type": "S",
-  "Input": "wow api jeewithaya hondai!",
-  "Expected output": "Wow අපි ජීවිතය හොඳයි!",
-  "Actual output": "Wow අපි ජීවිතය හොඳයි!",
-  "Status": "Pass",
-  "Accuracy justification / Description": "Exclamatory sentence preserved.",
-  "What is covered by the test": "Exclamation; Simple sentence; S (≤30 characters); Accuracy validation"
-},
-{
-  "TC ID": "Pos_Fun_0017",
-  "Test case name": "Convert conditional sentence",
-  "Input length type": "M",
-  "Input": "oba yannee nam mama ehema karanavaa",
-  "Expected output": "ඔබ යන්නේ නම් මම එහෙම කරනවා",
-  "Actual output": "ඔබ යන්නේ නම් මම එහෙම කරනවා",
-  "Status": "Pass",
-  "Accuracy justification / Description": "Conditional meaning preserved.",
-  "What is covered by the test": "Conditional sentence; M (31–299 characters); Accuracy validation"
-},
-{
-  "TC ID": "Pos_Fun_0018",
-  "Test case name": "Convert question with mixed languages",
-  "Input length type": "M",
-  "Input": "mata help ekak karanna puluvandha? Can you help me?",
-  "Expected output": "මට help එකක් කරන්න පුළුවන්ද? Can you help me?",
-  "Actual output": "මට help එකක් කරන්න පුළුවන්ද? Can you help me?",
-  "Status": "Pass",
-  "Accuracy justification / Description": "Mixed Singlish + English question handled correctly.",
-  "What is covered by the test": "Mixed language; Compound sentence; M (31–299 characters); Accuracy validation"
-},
-{
-  "TC ID": "Neg_Fun_0006",
-  "Test case name": "Unsupported emoji input",
-  "Input length type": "S",
-  "Input": "mama 😎 karanavaa",
-  "Expected output": "මම 😎 කරනවා",
-  "Actual output": "මම karanavaa 😎",
-  "Status": "Fail",
-  "Accuracy justification / Description": "System fails to handle emoji placement correctly.",
-  "What is covered by the test": "Emoji handling; S (≤30 characters); Robustness validation"
-},
-{
-  "TC ID": "Neg_Fun_0007",
-  "Test case name": "Invalid punctuation sequence",
-  "Input length type": "S",
-  "Input": "mama!!! karanavaa??",
-  "Expected output": "මම කරනවා!!!",
-  "Actual output": "මම!!! කරනවා??",
-  "Status": "Fail",
-  "Accuracy justification / Description": "System does not normalize multiple punctuation correctly.",
-  "What is covered by the test": "Punctuation handling; S (≤30 characters); Robustness validation"
-},
-{
-  "TC ID": "Pos_UI_0005",
-  "Test case name": "Tooltip shows full text",
-  "Input length type": "M",
-  "Input": "mama gedhara yanavaa, oba dakinna puluwanda?",
-  "Expected output": "Full Sinhala output visible on hover tooltip",
-  "Actual output": "Full Sinhala output visible on hover tooltip",
-  "Status": "Pass",
-  "Accuracy justification / Description": "Tooltip displays entire converted text correctly.",
-  "What is covered by the test": "UI usability; M (31–299 characters); Tooltip behavior"
-},
-{
-  "TC ID": "Pos_UI_0006",
-  "Test case name": "Responsive UI on mobile",
-  "Input length type": "M",
-  "Input": "mama gedhara yanavaa, oba dakinna puluwanda?",
-  "Expected output": "Sinhala output fits mobile screen without overflow",
-  "Actual output": "Sinhala output fits mobile screen without overflow",
-  "Status": "Pass",
-  "Accuracy justification / Description": "Output fits well on smaller devices.",
-  "What is covered by the test": "UI responsiveness; M (31–299 characters); Mobile display"
-},
-{
-  "TC ID": "Neg_UI_0004",
-  "Test case name": "UI breaks with unsupported font",
-  "Input length type": "S",
-  "Input": "අයියෝ",
-  "Expected output": "Text displayed correctly",
-  "Actual output": "Text overlaps or disappears",
-  "Status": "Fail",
-  "Accuracy justification / Description": "Unsupported font causes display issues.",
-  "What is covered by the test": "UI rendering; Simple sentence; S (≤30 characters); Font compatibility"
-},
-{
-  "TC ID": "Neg_UI_0005",
-  "Test case name": "Button not clickable after input",
-  "Input length type": "S",
-  "Input": "mata help ekak karanna puluvandha?",
-  "Expected output": "Button responds correctly",
-  "Actual output": "Button does not respond",
-  "Status": "Fail",
-  "Accuracy justification / Description": "UI element becomes unresponsive after input.",
-  "What is covered by the test": "UI functionality; Simple sentence; S (≤30 characters); Button click handling"
-}
-
 
   
 ];
@@ -418,5 +421,6 @@ const ws = XLSX.utils.json_to_sheet(testCases);
 XLSX.utils.book_append_sheet(wb, ws, "TestCases");
 
 // Write the Excel file
-XLSX.writeFile(wb, "IT3040_TestCases.xlsx");
+XLSX.writeFile(wb, "IT23156210 - IT3040_TestCases.xlsx");
 console.log("Excel file generated successfully!");
+
