@@ -88,27 +88,21 @@ Prerequisites:
 - Git
 - Visual Studio Code
 
-Step 1: Clone the repository
-git clone <https://github.com/malshanmalith093/IT23156210_Playwright_Project.git>
-cd IT23156210_Playwright_Project
+
+Step 1: Open the project folder in your terminal or IDE
 
 Step 2: Install dependencies
 npm install
 
-Step 3: Install Playwright browsers
-npx playwright install
+Step 3: Run Playwright tests
+npx playwright test
+
 
 
 RUNNING THE TESTS
 -----------------
 Run all tests:
 npx playwright test
-
-Run tests using Playwright UI mode:
-npx playwright test --ui
-
-Run tests in a specific browser:
-npx playwright test --project=chromium
 
 
 TEST REPORTING
